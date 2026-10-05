@@ -342,8 +342,18 @@ def main():
         art[k] = repaint_sign(art[k], quad, text)
     for k, poly in SOFTEN.items():
         art[k] = soften(art[k], poly)
+    thumbs = ROOT / "assets" / "thumbs"
+    thumbs.mkdir(parents=True, exist_ok=True)
     for i, k in enumerate(ORDER):
-        uri = webp_uri(cutout(k, art[k]))
+        cut = cutout(k, art[k])
+        # README table icon: building cut-out, tight square, 2x for a 56px display
+        bb = cut.getchannel("A").point(lambda v: 255 if v > 24 else 0).getbbox()
+        t = cut.crop(bb)
+        side = max(t.size) + 8
+        sq = Image.new("RGBA", (side, side))
+        sq.paste(t, ((side - t.width) // 2, side - t.height - 4))
+        sq.resize((112, 112), Image.LANCZOS).save(thumbs / f"{k}.png", optimize=True)
+        uri = webp_uri(cut)
         for theme in THEMES:
             svg = card(i, stops[k], theme, uri)
             p = OUT / f"{k}-{theme}.svg"
