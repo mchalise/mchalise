@@ -1,11 +1,6 @@
 <a href="https://mchalise.com.np">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./assets/night.svg">
-    <img alt="The Kathmandu Block: my career as an isometric city block. Each building is a chapter; Haki the red panda strolls the lanes." src="./assets/day.svg" width="100%">
-  </picture>
+  <img alt="Manish Chalise · Engineer, Kathmandu. The Kathmandu Block: my career as an isometric city block that follows the real clock in Kathmandu. Each building is a chapter; Haki the red panda says namaste." src="https://raw.githubusercontent.com/mchalise/mchalise/output/banner.svg" width="100%">
 </a>
-
-<h3 align="center">Manish Chalise · Engineer, Kathmandu</h3>
 
 <p align="center">
   <a href="https://mchalise.com.np"><b>Walk the block →</b></a> ·
@@ -18,17 +13,24 @@ Twelve-plus years building web and web3 systems: correspondent banking, fintech,
 
 ### The block, building by building
 
-| | Where | What |
-|---|---|---|
-| **Now** | [Gurkha Labs](https://gurkhalabs.com) · Kathmandu | Chief Technology Officer |
-| 2024–26 | Independent consultant | Web3, LLM prototypes, product guidance for early founders |
-| 2017–23 | [ZenLedger](https://zenledger.io) · Seattle, remote (via WhiteHat Engineering) | Founding Engineer & Lead. Joined at MVP, scaled through a $15M Series B. Led a team of up to 15; rewrote the tax engine from Rails to Go (70% less compute, 60% faster) |
-| Federal | BATS · ZenLedger's government line | Engineering Lead, crypto forensics used by IRS investigation units |
-| 2015–17 | [InvestReady](https://www.investready.com) · Eepos IT | Built the investor-eligibility verification platform (Laravel) |
-| 2014–15 | First Global Data · Toronto, remote | REST/SOAP services for cross-border digital money |
-| 2013–14 | EB Pearls · Kathmandu | Web apps and security audits for government agencies |
-| 2009–13 | Kathmandu University | B.E. Computer Engineering |
+<p align="center">
+  <a href="https://mchalise.com.np/#ku"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/cards/ku-dark.svg"><img src="./assets/cards/ku-light.svg" width="32%" alt="Kathmandu University · 2009 – 2013 · B.E. Computer Engineering"></picture></a>
+  <a href="https://mchalise.com.np/#eb"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/cards/eb-dark.svg"><img src="./assets/cards/eb-light.svg" width="32%" alt="EB Pearls · May 2013 – Jun 2014 · Web Application Developer"></picture></a>
+  <a href="https://mchalise.com.np/#fgd"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/cards/fgd-dark.svg"><img src="./assets/cards/fgd-light.svg" width="32%" alt="First Global Data · Jun 2014 – Nov 2015 · Software Engineer"></picture></a>
+</p>
+
+<p align="center">
+  <a href="https://mchalise.com.np/#investready"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/cards/investready-dark.svg"><img src="./assets/cards/investready-light.svg" width="32%" alt="InvestReady · Dec 2015 – Nov 2017 · Freelance developer · Eepos IT"></picture></a>
+  <a href="https://mchalise.com.np/#whitehat"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/cards/whitehat-dark.svg"><img src="./assets/cards/whitehat-light.svg" width="32%" alt="WhiteHat Engineering · Dec 2017 – Nov 2023 · Senior Software Engineer · contractor"></picture></a>
+  <a href="https://mchalise.com.np/#zenledger"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/cards/zenledger-dark.svg"><img src="./assets/cards/zenledger-light.svg" width="32%" alt="ZenLedger · Dec 2017 – Oct 2023 · Founding Engineer &amp; Lead Software Engineer"></picture></a>
+</p>
+
+<p align="center">
+  <a href="https://mchalise.com.np/#bats"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/cards/bats-dark.svg"><img src="./assets/cards/bats-light.svg" width="32%" alt="BATS · Multi-year federal contract · Engineering Lead · crypto forensics"></picture></a>
+  <a href="https://mchalise.com.np/#freelance"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/cards/freelance-dark.svg"><img src="./assets/cards/freelance-light.svg" width="32%" alt="Independent consultant · Aug 2024 – Feb 2026 · Freelance"></picture></a>
+  <a href="https://mchalise.com.np/#gurkha"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/cards/gurkha-dark.svg"><img src="./assets/cards/gurkha-light.svg" width="32%" alt="Gurkha Labs · Aug 2026 – now · Chief Technology Officer"></picture></a>
+</p>
 
 **Stack I reach for:** Go · Ruby on Rails · AWS · Laravel · LLMs · on-chain data pipelines
 
-<sub>The banner switches to night when GitHub is in dark mode. Built from the same art as the site by <a href="./scripts/build_banner.py">scripts/build_banner.py</a>.</sub>
+<sub>The banner follows the real clock in Kathmandu (day, dusk, night) and lights a window ring for every few days I ship. Rebuilt hourly by a GitHub Action from the same art as the site.</sub>
