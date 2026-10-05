@@ -15,50 +15,18 @@ Twelve-plus years building web and web3 systems: correspondent banking, fintech,
 
 <img src="./assets/flags.svg" width="100%" alt="">
 
-<table>
-<tr>
-<td align="center" width="76"><a href="https://mchalise.com.np/#gurkha"><img src="./assets/thumbs/gurkha.png" width="56" alt=""></a></td>
-<td><a href="https://gurkhalabs.com"><b>Gurkha Labs</b></a> · Kathmandu<br><i>Chief Technology Officer</i><br><sub>A senior studio building for international clients, with AI agents as the amplifier.</sub></td>
-<td align="right" width="96"><code>Now</code></td>
-</tr>
-<tr>
-<td align="center" width="76"><a href="https://mchalise.com.np/#freelance"><img src="./assets/thumbs/freelance.png" width="56" alt=""></a></td>
-<td><b>Independent consultant</b> · Kathmandu<br><i>Freelance</i><br><sub>Web3 concepts, LLM prototypes and product guidance for early founders.</sub></td>
-<td align="right" width="96"><code>2024–26</code></td>
-</tr>
-<tr>
-<td align="center" width="76"><a href="https://mchalise.com.np/#zenledger"><img src="./assets/thumbs/zenledger.png" width="56" alt=""></a></td>
-<td><a href="https://zenledger.io"><b>ZenLedger</b></a> · Seattle, remote <sub>via WhiteHat Engineering</sub><br><i>Founding Engineer &amp; Lead Software Engineer</i><br><sub>Joined at MVP, scaled through a $15M Series B. Led a team of up to 15; rewrote the tax engine from Rails to Go (70% less compute, 60% faster).<br><sub>100K+ customers · $50B+ assets tracked · 10B+ transaction rows · 100+ exchanges &amp; chains</sub></sub></td>
-<td align="right" width="96"><code>2017–23</code></td>
-</tr>
-<tr>
-<td align="center" width="76"><a href="https://mchalise.com.np/#bats"><img src="./assets/thumbs/bats.png" width="56" alt=""></a></td>
-<td><a href="https://bats.ai/"><b>BATS</b></a> · ZenLedger’s government line<br><i>Engineering Lead · crypto forensics</i><br><sub>Used by IRS Criminal and Civil Investigation units.</sub></td>
-<td align="right" width="96"><code>Federal</code></td>
-</tr>
-<tr>
-<td align="center" width="76"><a href="https://mchalise.com.np/#investready"><img src="./assets/thumbs/investready.png" width="56" alt=""></a></td>
-<td><a href="https://www.investready.com"><b>InvestReady</b></a> · Eepos IT<br><i>Freelance developer</i><br><sub>Built the investor-eligibility verification platform (Laravel).</sub></td>
-<td align="right" width="96"><code>2015–17</code></td>
-</tr>
-<tr>
-<td align="center" width="76"><a href="https://mchalise.com.np/#fgd"><img src="./assets/thumbs/fgd.png" width="56" alt=""></a></td>
-<td><b>First Global Data</b> · Toronto, remote<br><i>Software Engineer</i><br><sub>REST and SOAP services for cross-border digital money.</sub></td>
-<td align="right" width="96"><code>2014–15</code></td>
-</tr>
-<tr>
-<td align="center" width="76"><a href="https://mchalise.com.np/#eb"><img src="./assets/thumbs/eb.png" width="56" alt=""></a></td>
-<td><a href="https://ebpearls.com.au/"><b>EB Pearls</b></a> · Kathmandu<br><i>Web Application Developer</i><br><sub>Web apps and security audits for government agencies.</sub></td>
-<td align="right" width="96"><code>2013–14</code></td>
-</tr>
-<tr>
-<td align="center" width="76"><a href="https://mchalise.com.np/#ku"><img src="./assets/thumbs/ku.png" width="56" alt=""></a></td>
-<td><a href="https://ku.edu.np/"><b>Kathmandu University</b></a> · Dhulikhel<br><i>B.E. Computer Engineering</i><br><sub>The first brick on the block.</sub></td>
-<td align="right" width="96"><code>2009–13</code></td>
-</tr>
-</table>
+<p>
+<a href="https://mchalise.com.np/#gurkha"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/rows/gurkha-dark.svg"><img src="./assets/rows/gurkha-light.svg" width="100%" alt="Gurkha Labs · Now · Chief Technology Officer"></picture></a><br>
+<a href="https://mchalise.com.np/#freelance"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/rows/freelance-dark.svg"><img src="./assets/rows/freelance-light.svg" width="100%" alt="Independent consultant · 2024–26"></picture></a><br>
+<a href="https://mchalise.com.np/#zenledger"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/rows/zenledger-dark.svg"><img src="./assets/rows/zenledger-light.svg" width="100%" alt="ZenLedger · 2017–23 · Founding Engineer &amp; Lead Software Engineer"></picture></a><br>
+<a href="https://mchalise.com.np/#bats"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/rows/bats-dark.svg"><img src="./assets/rows/bats-light.svg" width="100%" alt="BATS · Engineering Lead, crypto forensics"></picture></a><br>
+<a href="https://mchalise.com.np/#investready"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/rows/investready-dark.svg"><img src="./assets/rows/investready-light.svg" width="100%" alt="InvestReady · 2015–17"></picture></a><br>
+<a href="https://mchalise.com.np/#fgd"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/rows/fgd-dark.svg"><img src="./assets/rows/fgd-light.svg" width="100%" alt="First Global Data · 2014–15 · Software Engineer"></picture></a><br>
+<a href="https://mchalise.com.np/#eb"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/rows/eb-dark.svg"><img src="./assets/rows/eb-light.svg" width="100%" alt="EB Pearls · 2013–14 · Web Application Developer"></picture></a><br>
+<a href="https://mchalise.com.np/#ku"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/rows/ku-dark.svg"><img src="./assets/rows/ku-light.svg" width="100%" alt="Kathmandu University · 2009–13 · B.E. Computer Engineering"></picture></a>
+</p>
 
-<p align="right"><sub>Tap a building to open its chapter on the site ↗</sub></p>
+<p align="center"><sub>Each row opens its chapter on the site ↗ · <a href="https://gurkhalabs.com">gurkhalabs.com</a> · <a href="https://zenledger.io">zenledger.io</a> · <a href="https://bats.ai/">bats.ai</a> · <a href="https://www.investready.com">investready.com</a> · <a href="https://ebpearls.com.au/">ebpearls.com.au</a> · <a href="https://ku.edu.np/">ku.edu.np</a></sub></p>
 
 **Stack I reach for:** Go · Ruby on Rails · AWS · Laravel · LLMs · on-chain data pipelines
 
