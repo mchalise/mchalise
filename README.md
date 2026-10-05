@@ -28,6 +28,8 @@ Twelve-plus years building web and web3 systems: correspondent banking, fintech,
 
 <p align="center"><sub>Each row opens its chapter on the site ↗ · <a href="https://gurkhalabs.com">gurkhalabs.com</a> · <a href="https://zenledger.io">zenledger.io</a> · <a href="https://bats.ai/">bats.ai</a> · <a href="https://www.investready.com">investready.com</a> · <a href="https://ebpearls.com.au/">ebpearls.com.au</a> · <a href="https://ku.edu.np/">ku.edu.np</a></sub></p>
 
-**Stack I reach for:** Go · Ruby on Rails · AWS · Laravel · LLMs · on-chain data pipelines
+### Tools of the trade
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/stack-dark.svg"><img src="./assets/stack-light.svg" width="100%" alt="Tools of the trade: AI and LLMs (Claude, OpenAI, LangChain, vector DBs, AI agents), Ruby, Go, TypeScript, Python, PHP, Solidity, Rails, Node.js, Laravel, microservices, React, Next.js, AWS (ECS, Lambda, RDS, S3), Docker, Kubernetes, GitHub Actions, Datadog, PostgreSQL, Redis, MongoDB, Bitcoin, Ethereum. Off the keyboard: guitar, sports, energy healing and meditation (Grandmaster)."></picture>
 
 <sub>The banner follows the real clock in Kathmandu (day, dusk, night) and lights a window ring for every few days I ship. Rebuilt hourly by a GitHub Action from the same art as the site.</sub>
