@@ -27,7 +27,9 @@ GROUPS = [
     ("Data & Web3", [("postgresql", "PostgreSQL"), ("redis", "Redis"), ("mongodb", "MongoDB"), ("bitcoin", "Bitcoin"),
                      ("ethereum", "Ethereum"), ("pipeline", "On-chain pipelines")]),
 ]
-OFF = "guitar · basketball, football & cricket · energy healing & meditation (Grandmaster)"
+OFF = [("guitar", "Guitar"), ("basketball", "Basketball"), ("football", "Football"), ("cricket", "Cricket"),
+       ("chakra", "Energy Healing & Meditation (Grandmaster)")]
+OFF_TEXT = " · ".join(nm for _, nm in OFF)
 
 THEMES = {
     "light": dict(bg="#fbf7ef", edge="#eadfcb", chip="#ffffff", chip_edge="#e8dcc8", ink="#2b2622", muted="#7d7168",
@@ -42,6 +44,11 @@ NAME = ("R", 14.2)
 
 
 def icon_uri(k, theme):
+    png = ICONS / f"{k}-{theme}.png"            # per-theme raster first (e.g. silhouette recoloured for navy)
+    if not png.exists():
+        png = ICONS / f"{k}.png"
+    if png.exists():
+        return "data:image/png;base64," + base64.b64encode(png.read_bytes()).decode()
     s = (ICONS / f"{k}.svg").read_text()
     s = re.sub(r"<metadata>.*?</metadata>", "", s, flags=re.S)
     if theme == "dark" and k in RECOLOR_DARK:
@@ -71,41 +78,45 @@ def balanced(widths, avail):
     return set(range(1, n))
 
 
+def chips(body, items, y, n, t, theme, x_start, x_max, big=()):
+    widths = [12 + IC + 8 + bc.text_w(*NAME, nm) + 14 + (8 if k in big else 0) for k, nm in items]
+    breaks = balanced(widths, x_max - x_start)
+    x = x_start
+    for j, ((k, name), w) in enumerate(zip(items, widths)):
+        if j in breaks:
+            x, y = x_start, y + CH + 10
+        d = 0.12 + n * 0.022
+        ic = IC + (8 if k in big else 0)
+        body.append(f'<g class="chip" style="animation-delay:{d:.3f}s"><rect x="{x:.1f}" y="{y}" width="{w:.1f}" height="{CH}" rx="{CH / 2}" fill="{t["chip"]}" stroke="{t["chip_edge"]}"/>'
+                    f'<image x="{x + 12 - (4 if k in big else 0):.1f}" y="{y + (CH - ic) / 2:.1f}" width="{ic}" height="{ic}" href="{icon_uri(k, theme)}"/>'
+                    f'<text class="nm" x="{x + 12 + ic + 8 - (4 if k in big else 0):.1f}" y="{y + CH / 2 + 5:.1f}">{name.replace("&", "&amp;")}</text></g>')
+        x += w + GAP
+        n += 1
+    return y, n
+
+
 def build(theme):
     t = THEMES[theme]
     x_start, x_max = PAD + LABEL_W, W - PAD
     y, body, n = PAD + 4, [], 0
     for gi, (label, items) in enumerate(GROUPS):
         body.append(f'<text class="lab" style="animation-delay:{0.05 + gi * 0.08:.2f}s" x="{PAD + 6}" y="{y + CH / 2 + 4.5:.1f}">{label.upper().replace("&", "&amp;")}</text>')
-        x = x_start
-        widths = [12 + IC + 8 + bc.text_w(*NAME, nm) + 14 for _, nm in items]
-        # balanced wrap: fewest lines that fit, split so line widths are as even as possible
-        avail = x_max - x_start
-        breaks = balanced(widths, avail)
-        for j, ((k, name), w) in enumerate(zip(items, widths)):
-            if j in breaks:
-                x, y = x_start, y + CH + 10
-            d = 0.12 + n * 0.022
-            body.append(f'<g class="chip" style="animation-delay:{d:.3f}s"><rect x="{x:.1f}" y="{y}" width="{w:.1f}" height="{CH}" rx="{CH / 2}" fill="{t["chip"]}" stroke="{t["chip_edge"]}"/>'
-                        f'<image x="{x + 12:.1f}" y="{y + (CH - IC) / 2:.1f}" width="{IC}" height="{IC}" href="{icon_uri(k, theme)}"/>'
-                        f'<text class="nm" x="{x + 12 + IC + 8:.1f}" y="{y + CH / 2 + 5:.1f}">{name.replace("&", "&amp;")}</text></g>')
-            x += w + GAP
-            n += 1
+        y, n = chips(body, items, y, n, t, theme, x_start, x_max)
         y += CH + (18 if gi < len(GROUPS) - 1 else 0)
         if gi < len(GROUPS) - 1:
             body.append(f'<line x1="{x_start}" x2="{x_max}" y1="{y - 9}" y2="{y - 9}" stroke="{t["rule"]}" stroke-dasharray="2 5" stroke-linecap="round"/>')
-    y += 26
-    body.append(f'<line x1="{PAD}" x2="{W - PAD}" y1="{y - 6}" y2="{y - 6}" stroke="{t["rule"]}"/>')
     y += 22
-    body.append(f'<text class="offl" x="{PAD + 6}" y="{y}">OFF THE KEYBOARD</text>'
-                f'<text class="off" x="{PAD + LABEL_W}" y="{y}">{OFF.replace("&", "&amp;")}</text>')
+    body.append(f'<line x1="{PAD}" x2="{W - PAD}" y1="{y - 12}" y2="{y - 12}" stroke="{t["rule"]}"/>')
+    y += 4
+    body.append(f'<text class="lab" style="animation-delay:.6s" x="{PAD + 6}" y="{y + CH / 2 + 4.5:.1f}">OFF THE KEYBOARD</text>')
+    y, n = chips(body, OFF, y, n, t, theme, x_start, x_max, big={"chakra"})
+    y += CH
     H = y + PAD - 4
-    text_all = "".join(g[0].upper() for g in GROUPS) + "".join(nm for g in GROUPS for _, nm in g[1]) + OFF + "OFF THE KEYBOARD"
+    text_all = "".join(g[0].upper() for g in GROUPS) + "".join(nm for g in GROUPS for _, nm in g[1]) + OFF_TEXT + "OFF THE KEYBOARD"
     fonts = "".join(f'@font-face{{font-family:{f};src:url(data:font/woff2;base64,{bc.woff2_subset(f, text_all)}) format("woff2")}}' for f in ("S", "R", "B"))
     css = (fonts +
            f'.lab,.offl{{font:11.5px B;letter-spacing:1.6px;fill:{t["accent"]}}}'
            f'.nm{{font:14.2px R;fill:{t["ink"]}}}'
-           f'.off{{font:15px R;fill:{t["muted"]}}}'
            '.chip{animation:pop .5s cubic-bezier(.2,.9,.3,1.25) both;transform-box:fill-box;transform-origin:50% 50%}'
            '.lab{animation:fade .6s ease-out both}'
            '@keyframes pop{from{opacity:0;transform:translateY(6px) scale(.92)}to{opacity:1;transform:none}}'
@@ -113,7 +124,7 @@ def build(theme):
            '@media (prefers-reduced-motion:reduce){*{animation:none!important}}')
     return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H:.0f}" width="{W}" height="{H:.0f}" role="img" '
             f'aria-label="Tools of the trade: ' + "; ".join(f'{g[0]}: ' + ", ".join(nm for _, nm in g[1]) for g in GROUPS).replace("&", "&amp;") +
-            f'. Off the keyboard: {OFF.replace("&", "&amp;")}">'
+            f'. Off the keyboard: {OFF_TEXT.replace("&", "&amp;")}">'
             f'<style>{css}</style><rect x="1" y="1" width="{W - 2}" height="{H - 2:.0f}" rx="18" fill="{t["bg"]}" stroke="{t["edge"]}"/>'
             + "".join(body) + "</svg>")
 

@@ -3,3 +3,4 @@ Tech icons for the README stack section.
 - rails, sidekiq, honeybadger, bitcoin, ethereum, claude, langchain, express, nextjs, bash, solidity: Simple Icons (CC0), https://simpleicons.org, coloured with each brand hex
 - llm, agents, pipeline, api, microservices, vectordb, openai (generic glyph, not the logo), lambda, ecs, rds, s3 (AWS-orange glyphs): drawn for this repo
 Logos are trademarks of their owners; used to name tools, not to imply endorsement.
+- guitar, basketball, football, cricket: drawn for this repo; chakra-light.png / chakra-dark.png: meditation figure supplied by Tulsi (dark version recoloured for navy). Check the source licence if it came from a stock site.
